@@ -1,0 +1,14 @@
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  IntelligentIntern\DefaultChatMemoryBundle\Service\:
+    resource: '../src/Service/*'
+    public: true
+    tags:
+      - { name: 'chat_memory.strategy' }
+
+

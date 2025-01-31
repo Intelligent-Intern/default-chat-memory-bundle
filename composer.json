@@ -1,0 +1,22 @@
+{
+  "name": "intelligent-intern/default-chat-memory-bundle",
+  "description": "Intelligent Intern bundle for ChatMemory integration",
+  "type": "intelligent-intern-bundle",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "IntelligentIntern\\DefaultChatMemoryBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "symfony/http-client": "7.2.*",
+    "symfony/framework-bundle": "7.2.*"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0-dev"
+    }
+  }
+}
+
