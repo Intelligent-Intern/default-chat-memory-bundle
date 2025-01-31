@@ -5,10 +5,8 @@ namespace IntelligentIntern\DefaultChatMemoryBundle\Service;
 use App\Contract\ChatHistoryInterface;
 use App\Contract\ChatMessageEntryInterface;
 use App\Entity\ChatHistory;
-use App\Entity\ChatMessageEntry;
 use App\Factory\LogServiceFactory;
 use App\Repository\ChatHistoryRepository;
-use App\Service\VaultService;
 use App\Contract\ChatMemoryServiceInterface;
 use App\Contract\LogServiceInterface;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
@@ -32,15 +30,10 @@ class DefaultChatMemoryService implements ChatMemoryServiceInterface
      * @throws ClientExceptionInterface
      */
     public function __construct(
-        private readonly VaultService $vaultService,
         private readonly LogServiceFactory $logServiceFactory,
         private readonly ChatHistoryRepository $chatHistoryRepository
     ) {
         $this->logger = $this->logServiceFactory->create();
-        $defaultConfig = $this->vaultService->fetchSecret('secret/data/data/default_chat_memory');
-        $defaultUrl = $defaultConfig['url'] ?? throw new \RuntimeException('_URL not found in Vault.');
-        $username = $defaultConfig['username'] ?? throw new \RuntimeException('_USERNAME not found in Vault.');
-        $password = $defaultConfig['password'] ?? throw new \RuntimeException('_PASSWORD not found in Vault.');
         $this->logger->info('Initialized DefaultChatMemoryService');
     }
 
