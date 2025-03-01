@@ -39,7 +39,7 @@ class DefaultChatMemoryService implements ChatMemoryServiceInterface
 
     public function supports(string $provider): bool
     {
-        return strtolower($provider) === 'chat_memory';
+        return strtolower($provider) === 'default';
     }
 
     /**

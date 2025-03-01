@@ -2,7 +2,7 @@
 
 namespace IntelligentIntern\DefaultChatMemoryBundle;
 
-use App\DependencyInjection\Compiler\ChatMemoryStrategyCompilerPass;
+use App\DependencyInjection\ChatMemory\ChatMemoryStrategyCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
