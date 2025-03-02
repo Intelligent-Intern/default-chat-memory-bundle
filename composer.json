@@ -1,6 +1,7 @@
 {
   "name": "intelligent-intern/default-chat-memory-bundle",
   "description": "Intelligent Intern bundle for ChatMemory integration",
+  "version": "1.0.0",
   "type": "intelligent-intern-bundle",
   "license": "MIT",
   "autoload": {
